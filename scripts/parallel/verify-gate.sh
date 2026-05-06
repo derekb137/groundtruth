@@ -61,11 +61,12 @@ fi
 
 # --- mypy with ceiling ---
 MYPY_CEILING="${MYPY_CEILING:-}"  # if unset, just runs mypy without ceiling check
-if command -v uv >/dev/null && [ -f pyproject.toml ]; then
+MYPY_TARGET="${MYPY_TARGET:-packages/}"  # plan §4: groundtruth uses packages/, not src/
+if command -v uv >/dev/null && [ -f pyproject.toml ] && [ "${SKIP_MYPY:-0}" != "1" ] && [ -d "$MYPY_TARGET" ]; then
     if [ -n "$MYPY_CEILING" ]; then
-        run_gate "mypy (≤ $MYPY_CEILING errors)" "errors=\$(uv run --no-sync mypy src/ 2>&1 | grep -E '^Found [0-9]+ errors?' | grep -oE '[0-9]+' | head -1); [ -n \"\$errors\" ] && [ \"\$errors\" -le $MYPY_CEILING ] && echo \"mypy: \$errors errors (ceiling $MYPY_CEILING)\""
+        run_gate "mypy (≤ $MYPY_CEILING errors)" "errors=\$(uv run --no-sync mypy $MYPY_TARGET 2>&1 | grep -E '^Found [0-9]+ errors?' | grep -oE '[0-9]+' | head -1); [ -n \"\$errors\" ] && [ \"\$errors\" -le $MYPY_CEILING ] && echo \"mypy: \$errors errors (ceiling $MYPY_CEILING)\""
     else
-        run_gate "mypy" "uv run --no-sync mypy src/ 2>&1 | tail -1"
+        run_gate "mypy" "uv run --no-sync mypy $MYPY_TARGET 2>&1 | tail -1"
     fi
 fi
 
