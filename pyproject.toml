@@ -53,3 +53,11 @@ markers = [
     "slow: takes >5s",
     "evals: DeepEval-based, may call live LLMs",
 ]
+
+[tool.coverage.run]
+source = ["packages"]
+omit = ["tests/*", "scripts/*"]
+
+[tool.coverage.report]
+# New repo — coverage rises as Waves 2+ land. Gate re-enabled at Phase 1.
+fail_under = 0
