@@ -6,6 +6,6 @@ Real tests arrive in Wave 2+. This exists so pytest doesn't exit 5
 
 
 def test_packages_import() -> None:
-    import packages.core  # noqa: F401
-    import packages.courses  # noqa: F401
+    import packages.core
+    import packages.courses
     import packages.shared  # noqa: F401

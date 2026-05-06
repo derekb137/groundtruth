@@ -1,0 +1,5 @@
+FROM pgvector/pgvector:pg16-trixie
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends postgresql-16-pgvectorscale \
+    && rm -rf /var/lib/apt/lists/*

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "slug": "groundtruth-phase0",
+  "started_at": null,
+  "finished_at": null,
+  "base_branch": "develop",
+  "base_commit": "52ae77bfb",
+  "worktree_path": "/Users/derekb137/src/github/groundtruth-groundtruth-phase0",
+  "branch": "chore/groundtruth-phase0",
+  "current_wave": 1,
+  "current_pr": null,
+  "completed_prs": [],
+  "tasks": {},
+  "rate_limit_halts": [],
+  "blocked_tasks": []
+}

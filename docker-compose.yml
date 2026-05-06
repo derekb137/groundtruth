@@ -1,0 +1,23 @@
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.postgres
+    image: groundtruth/postgres:16-vectorscale
+    container_name: ${PROJECT_NAME:-groundtruth}-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-groundtruth}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-groundtruth}
+      POSTGRES_DB: ${POSTGRES_DB:-groundtruth}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - groundtruth_pgdata:/var/lib/postgresql/data
+      - ./scripts/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-groundtruth} -d ${POSTGRES_DB:-groundtruth}"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  groundtruth_pgdata:
