@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Claude API Pricing Reference</title>
+</head>
+<body>
+  <h1>Claude API Pricing Reference</h1>
+  <p>
+    This page summarizes pricing and usage details for Anthropic's Claude models,
+    including <strong>claude-sonnet-4-6</strong>, as of the current release.
+  </p>
+
+  <h2>Pricing</h2>
+  <p>Prices are per million tokens (MTok) and vary by model tier:</p>
+  <ul>
+    <li>Input: $3 / MTok</li>
+    <li>Output: $15 / MTok</li>
+    <li>Prompt-cache write: $3.75 / MTok</li>
+    <li>Prompt-cache read: $0.30 / MTok</li>
+  </ul>
+
+  <h2>Quick-Start Example</h2>
+  <p>Send a simple message using the Python SDK:</p>
+  <pre><code>import anthropic
+
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello, Claude"}],
+)
+print(message.content[0].text)
+</code></pre>
+</body>
+</html>
