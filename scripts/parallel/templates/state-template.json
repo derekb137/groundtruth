@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "slug": "{{SLUG}}",
+  "started_at": null,
+  "finished_at": null,
+  "base_branch": "{{BASE_BRANCH}}",
+  "base_commit": "{{BASE_COMMIT}}",
+  "worktree_path": "{{WORKTREE_PATH}}",
+  "branch": "{{BRANCH}}",
+  "current_wave": 1,
+  "current_pr": null,
+  "completed_prs": [],
+  "tasks": {},
+  "rate_limit_halts": [],
+  "blocked_tasks": []
+}

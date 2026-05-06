@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project artifacts
+notebooks/                  # generated notebook outputs (T-5.1)
+.crawl4ai/                  # crawler state cache
+data/                       # local fixtures, dumps
+
+# Worktrees auto-created by parallel toolkit (siblings, but exclude defensively)
+../groundtruth-*/
+
+# Claude Code session/state (per-effort plan files are committed; settings stays local)
+.claude/settings.local.json
+.claude/sessions/
+.claude/plans/state.json
+.claude/plans/progress.md
+.claude/plans/USER_NOTES.md
