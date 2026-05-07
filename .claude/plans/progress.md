@@ -1,8 +1,8 @@
-# Groundtruth Phase0 — Progress Dashboard
+# Groundtruth Phase1 — Progress Dashboard
 
-**Branch:** `chore/groundtruth-phase0`
-**Worktree:** `/Users/derekb137/src/github/groundtruth-groundtruth-phase0`
-**Base:** `origin/develop @ 52ae77bfb`
+**Branch:** `chore/groundtruth-phase1`
+**Worktree:** `/Users/derekb137/src/github/groundtruth-groundtruth-phase1`
+**Base:** `origin/develop @ 8168310cd`
 **Plan:** [plan.md](plan.md)
 **Started:** _not yet (run `./launch.sh` to begin)_
 
@@ -44,7 +44,7 @@ _(...)_
 
 | Event | Timestamp | Notes |
 |---|---|---|
-| Worktree created | 2026-05-06T14:11:41Z | based on `52ae77bfb` |
+| Worktree created | 2026-05-07T00:25:46Z | based on `8168310cd` |
 
 ---
 
